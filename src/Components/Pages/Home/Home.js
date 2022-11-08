@@ -1,10 +1,17 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import Service from './Service';
 import recent1 from "../../../assets/img/recent/rec1.jpg"
 import recent2 from "../../../assets/img/recent/rectest2.jpg"
 import recent3 from "../../../assets/img/recent/rec3.jpg"
+import gal1 from "../../../assets/img/gallery/gal1.jpg"
+import gal2 from "../../../assets/img/gallery/gal2.jpg"
+import gal3 from "../../../assets/img/gallery/gal3.jpg"
+import gal4 from "../../../assets/img/gallery/gal4.jpg"
+import gal5 from "../../../assets/img/gallery/gal5.jpg"
+import gal6 from "../../../assets/img/gallery/gal6.jpg"
 import './Home.css'
 const Home = () => {
     const services = useLoaderData();
@@ -78,6 +85,43 @@ const Home = () => {
             {/* Photo gallery */}
             <div className='mb-10'>
                 <h1 className='text-center text-5xl font-bold'>Gallery</h1>
+                <div className='grid grid-cols-3 md:grid-cols-6 gap-3 mx-3 mt-5'>
+                    <PhotoProvider>
+                        <div className='col-span-1'>
+                            <PhotoView src={gal1}>
+                                <img src={gal1} alt="" />
+                            </PhotoView>
+                        </div>
+                        <div className='col-span-1'>
+                            <PhotoView src={gal2}>
+                                <img src={gal2} alt="" style={{height:'131px'}}/>
+                            </PhotoView>
+                        </div>
+                        <div className='col-span-1'>
+                            <PhotoView src={gal3}>
+                            <img src={gal3} alt="" style={{height:'131px'}}/>
+                            </PhotoView>
+                            
+                        </div>
+                        <div className='col-span-1'>
+                            <PhotoView src={gal4}>
+                            <img src={gal4} alt="" style={{height:'131px'}}/>
+                            </PhotoView>
+                        </div>
+                        <div className='col-span-1'>
+                            <PhotoView src={gal5}>
+                            <img src={gal5} alt="" style={{height:'131px'}}/>
+                            </PhotoView>
+                        </div>
+                        <div className='col-span-1'>
+                            <PhotoView src={gal6}>
+                            <img src={gal6} alt="" style={{height:'131px'}}/>
+                            </PhotoView>
+                            
+                        </div>
+                    </PhotoProvider>
+
+                </div>
             </div>
         </div>
     );

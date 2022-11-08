@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaStar, FaUserAlt } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import 'react-photo-view/dist/react-photo-view.css';
+
 const Service = ({ service }) => {
     const { title, description, img, rating, customers, price } = service
     // console.log(typeof(img));

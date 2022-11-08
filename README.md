@@ -1,3 +1,5 @@
+I don't own any image. All images are taken from stunning photographers of unspalsh.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
