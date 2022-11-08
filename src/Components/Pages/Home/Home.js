@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Service from './Service';
 // import natureImg from "https://ibb.co/jVLqpKF"
 // import weddImg from "https://ibb.co/z5Kz7q0"
@@ -47,7 +47,7 @@ const Home = () => {
                 
                 </div>
                 <div className='text-center'>
-                <button className="btn btn-primary">See all</button>
+                <Link to='/services'><button className="btn btn-primary">See all</button></Link>
                 </div>
             </div>
             {/* Most recent shots */}
