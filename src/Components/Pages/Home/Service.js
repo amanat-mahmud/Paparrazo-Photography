@@ -35,7 +35,7 @@ const Service = ({ service }) => {
                     </div>
                     {/* view details buttonbutton */}
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">View Details</button>
+                        <button className="btn btn-outline">View Details</button>
                     </div>
                 </div>
             </div>
