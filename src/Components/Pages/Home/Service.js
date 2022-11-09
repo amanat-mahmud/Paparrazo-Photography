@@ -36,7 +36,7 @@ const Service = ({ service }) => {
                     </div>
                     {/* view details buttonbutton */}
                     <div className="card-actions justify-end">
-                        <Link to={`${service._id}`}><button className="btn btn-outline">View Details</button></Link>
+                        <Link to={`/services/${service._id}`}><button className="btn btn-outline">View Details</button></Link>
                     </div>
                 </div>
             </div>

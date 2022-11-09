@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../../assets/img/paparazzo3.png'
 import { AuthContext } from '../../../../context/AuthProvider';
 const Header = () => {
   const { user, logOut } = useContext(AuthContext)
   const menuItem = <>
-    <li><a href='/'>Home</a></li>
-    <li><a href='/services'>Services</a></li>
-    <li><a href='/'>Blog</a></li>
-    <li><a href='/'>My reviews</a></li>
+    <li><NavLink to='/'>Home</NavLink></li>
+    <li><NavLink to='/services'>Services</NavLink></li>
+    <li><NavLink to='/blog'>Blog</NavLink></li>
+    <li><NavLink to='/reviews'>My reviews</NavLink></li>
     {
       user?.displayName ? '' : <li><a href='/login'>Login</a></li>
     }
