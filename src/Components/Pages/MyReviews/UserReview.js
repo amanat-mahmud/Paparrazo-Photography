@@ -1,7 +1,9 @@
 import React from 'react';
 import { FaClock, FaStar,FaTrashAlt,FaEdit } from "react-icons/fa";
-const UserReview = ({ review }) => {
-    const { title, description, name, image, rating, date, time, zone } = review
+
+const UserReview = ({ review,handleDelete }) => {
+    const {_id, title, description, name, image, rating, date, time, zone } = review
+    
     return (
         <div className='my-10'>
             <section className="text-white body-font mx-10 border-2 border-white">
@@ -31,11 +33,14 @@ const UserReview = ({ review }) => {
                                     <p>{date} {time} {zone}</p>
                                 </div>
                             </div>
+                            {/* edit button */}
                             <div className='flex justify-end mt-5'>
                             <button className="btn btn-circle btn-outline mr-4">
                                 <FaEdit className='text-xl ml-1'></FaEdit>
                             </button>
-                            <button className="btn btn-circle btn-outline hover:bg-red-600 hover:border-white hover:text-white">
+                            {/* delete button */}
+                            <button className="btn btn-circle btn-outline hover:bg-red-600 hover:border-white hover:text-white"
+                            onClick={()=>handleDelete(_id)}>
                                 <FaTrashAlt className='text-xl'></FaTrashAlt>
                             </button>
                             </div>
