@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaStar, FaUserAlt } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
     const { title, description, img, rating, customers, price } = service
@@ -35,7 +36,7 @@ const Service = ({ service }) => {
                     </div>
                     {/* view details buttonbutton */}
                     <div className="card-actions justify-end">
-                        <button className="btn btn-outline">View Details</button>
+                        <Link to={`${service._id}`}><button className="btn btn-outline">View Details</button></Link>
                     </div>
                 </div>
             </div>
