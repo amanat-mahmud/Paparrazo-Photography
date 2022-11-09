@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import {  useLoaderData, useNavigate } from 'react-router-dom';
 import { FaStar, FaUserAlt, FaClock, FaImage } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import Review from './Review';
-import toast, { Toaster } from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider';
 const SingleService = () => {
     const { title, img, price, rating, customers, description, delivery, number_of_img } = useLoaderData()
     const [reviews, setReviews] = useState([]);
     const {user} = useContext(AuthContext);
+    const navigate = useNavigate()
     useEffect(() => {
         fetch('http://localhost:5000/reviews')
             .then(res => res.json())
@@ -21,9 +21,12 @@ const SingleService = () => {
     // console.log(reviews);
     const handleReview = () =>{
         if(user===null){
-            toast.error('Please login');
+            
+            navigate('/login')
         }
-        
+        else{
+             navigate('/givereview')
+        }
     }
     return (
         <div>
@@ -82,7 +85,7 @@ const SingleService = () => {
                         <FaStar className='mr-2 h-6 w-6'></FaStar>
                             Add Review
                         </button>
-                        <Toaster></Toaster>
+                        {user?.email ?  "": <p className='text-center font-bold text-red-600'>Please login to add review</p>}
                     </div>
                 </div>
             </div>

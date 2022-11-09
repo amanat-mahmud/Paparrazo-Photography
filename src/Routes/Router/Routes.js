@@ -3,6 +3,7 @@ import Error from "../../Components/Pages/Error/Error";
 import Home from "../../Components/Pages/Home/Home";
 import Login from "../../Components/Pages/Login/Login";
 import Register from "../../Components/Pages/Register/Register";
+import ReviewForm from "../../Components/Pages/Review/ReviewForm";
 import Services from "../../Components/Pages/Services/Services";
 import SingleService from "../../Components/SingleService/SingleService";
 import Main from "../../layout/Main";
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
             {
                 path: '/reviews',
                 element: <Register></Register>
+            },
+            {
+                path: '/givereview',
+                element: <ReviewForm></ReviewForm>
             },
         ],
         errorElement: <Error></Error>

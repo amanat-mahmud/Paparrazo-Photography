@@ -1,10 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from "../../../assets/img/paparazzo2.png"
 import {AuthContext} from "../../../context/AuthProvider"
 const Login = () => {
     const [showpass, setShowPass] = useState(false)
     const {loginGoogle,logIn} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
     const handleLogIn = (event)=>{
         event.preventDefault();
         const form = event.target;
@@ -12,12 +15,16 @@ const Login = () => {
         const password = form.password.value;
         // console.log(email,password);
         logIn(email,password)
-        .then(res=>{console.log(res.user);})
+        .then(res=>{console.log(res.user);
+            navigate(from, { replace: true });
+        })
         .catch(error=>console.error(error.message))
     }
     const handleGoogleLogin = ()=>{
         loginGoogle()
-        .then(res=>{console.log(res.user);})
+        .then(res=>{console.log(res.user);
+            navigate(from, { replace: true });
+        })
         .catch(error=>console.error(error.message))
     }
     return (
