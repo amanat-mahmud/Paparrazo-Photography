@@ -2,17 +2,23 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../../assets/img/paparazzo2.png"
 import {AuthContext} from "../../../context/AuthProvider"
-const Login = () => {
+const Register = () => {
     const [showpass, setShowPass] = useState(false)
-    const {loginGoogle,logIn} = useContext(AuthContext);
-    const handleLogIn = (event)=>{
+    const {loginGoogle,createUser,updateUser} = useContext(AuthContext);
+    const handleRegister = (event)=>{
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
+        const name = form.name.value;
+        const photo = form.photo.value;
         const password = form.password.value;
         // console.log(email,password);
-        logIn(email,password)
-        .then(res=>{console.log(res.user);})
+        createUser(email,password)
+        .then(res=>{console.log(res.user);
+            updateUser(name,photo)
+            .then(res=>{console.log("user updated");})
+            .catch()
+        })
         .catch(error=>console.error(error.message))
     }
     const handleGoogleLogin = ()=>{
@@ -29,13 +35,13 @@ const Login = () => {
                     </div>
                     <div className="bg-white shadow-lg rounded xl:w-1/3 lg:w-5/12 md:w-1/2 w-full lg:px-10 sm:px-6 sm:py-10 px-2 py-6">
                         <p tabIndex={0} className="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">
-                            Login to your account
+                            Register New account
                         </p>
                         <p tabIndex={0} className="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">
-                            Don't have account?{" "}
-                            <Link to='/register' className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none text-gray-800 cursor-pointer">
+                            Already have an account?{" "}
+                            <Link to='/login' className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none text-gray-800 cursor-pointer">
                                 {" "}
-                                Sign up here
+                                Log in here
                             </Link>
                         </p>
                         <button aria-label="Continue with google"  className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 p-3 border rounded-lg border-gray-700 flex items-center w-full mt-10 hover:bg-gray-100" onClick={handleGoogleLogin}>
@@ -70,7 +76,22 @@ const Login = () => {
                             <p className="text-base font-medium leading-4 px-2.5 text-gray-500">OR</p>
                             <hr className="w-full bg-gray-400" />
                         </div>
-                        <form onSubmit={handleLogIn}>
+                        <form onSubmit={handleRegister}>
+                        <div>
+                            <label htmlFor="name" className="text-sm font-medium leading-none text-gray-800">
+                                {" "}
+                                Name{" "}
+                            </label>
+                            <input id="name"  type="text" name='name' className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="John" 
+                            required/>
+                        </div>
+                        <div>
+                            <label htmlFor="photo" className="text-sm font-medium leading-none text-gray-800">
+                                {" "}
+                                Photo Url{" "}
+                            </label>
+                            <input id="photo"  type="text" name='photo' className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" required/>
+                        </div>
                         <div>
                             <label htmlFor="email" className="text-sm font-medium leading-none text-gray-800">
                                 {" "}
@@ -107,7 +128,7 @@ const Login = () => {
                         </div>
                         <div className="mt-8">
                             <button type='submit' className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
-                                Log in
+                                Create my account
                             </button>
                         </div>
                         </form>
@@ -129,7 +150,7 @@ const Login = () => {
                                     />
                                 </svg>
                             </div>
-                            <p className="sm:text-2xl text-xl leading-7 text-gray-600 pl-2.5">Log in and order now. Find out why I am the best in the business. I have several services. Choose from them and see why I am the best.</p>
+                            <p className="sm:text-2xl text-xl leading-7 text-gray-600 pl-2.5">Register and order now. Find out why I am the best in the business. I have several services. Choose from them and see why I am the best.</p>
                         </div>
                     </div>
                 </div>
@@ -138,4 +159,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
