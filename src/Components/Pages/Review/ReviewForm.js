@@ -18,8 +18,15 @@ const ReviewForm = () => {
         const rating = form.rating.value;
         const description = form.description.value;
         console.log(title,rating,description);
+        const date2 = new Date().toLocaleString()
+        const newDate = date2.split(', ')
+        const newDate2 = newDate.join(' ');
+        const newDate3 = newDate2.split(' ');
+        const date = newDate3[0];
+        const time = newDate3[1];
+        const zone = newDate3[2];
         const review= {
-            title,description,rating,name:user.displayName,image:user.photoURL,email:user.email,
+            title,description,rating,name:user.displayName,image:user.photoURL,email:user.email,date,time,zone
         }
         fetch('http://localhost:5000/reviews',{
             method: 'POST',

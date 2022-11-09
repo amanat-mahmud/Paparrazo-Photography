@@ -51,7 +51,7 @@ const Header = () => {
                 Profile
               </a>
             </li>
-            <li><Link to='/'>My reviews</Link></li>
+            <li><Link to='/myreviews'>My reviews</Link></li>
             <li><Link to='/'>Add Service</Link></li>
             <li><Link><button className="btn btn-error" onClick={handleLogout}>Log out</button></Link></li>
           </ul>
