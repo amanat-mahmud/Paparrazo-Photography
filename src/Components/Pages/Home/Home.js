@@ -13,7 +13,9 @@ import gal4 from "../../../assets/img/gallery/gal4.jpg"
 import gal5 from "../../../assets/img/gallery/gal5.jpg"
 import gal6 from "../../../assets/img/gallery/gal6.jpg"
 import './Home.css'
+import useTitle from '../../../Hook/useTitle';
 const Home = () => {
+    useTitle('Home');
     const services = useLoaderData();
     return (
         <div>

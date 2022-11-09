@@ -8,7 +8,6 @@ const Header = () => {
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/services'>Services</NavLink></li>
     <li><NavLink to='/blog'>Blog</NavLink></li>
-    <li><NavLink to='/reviews'>My reviews</NavLink></li>
     {
       user?.displayName ? '' : <li><NavLink to='/login'>Login</NavLink></li>
     }
@@ -52,7 +51,8 @@ const Header = () => {
                 Profile
               </a>
             </li>
-            <li><a href='/'>Add Service</a></li>
+            <li><Link to='/'>My reviews</Link></li>
+            <li><Link to='/'>Add Service</Link></li>
             <li><Link><button className="btn btn-error" onClick={handleLogout}>Log out</button></Link></li>
           </ul>
         </div >:''}

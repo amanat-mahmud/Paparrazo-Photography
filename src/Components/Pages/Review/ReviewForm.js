@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../context/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import useTitle from '../../../Hook/useTitle';
 const ReviewForm = () => {
+    useTitle('Add Review');
     // const [service,setService] = useState(null);
     // const handleServicename = (serviceName)=>{
     //     setService(serviceName);

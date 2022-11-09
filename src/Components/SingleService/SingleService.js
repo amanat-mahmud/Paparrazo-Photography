@@ -4,11 +4,13 @@ import { FaStar, FaUserAlt, FaClock, FaImage } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import Review from './Review';
 import { AuthContext } from '../../context/AuthProvider';
+import useTitle from '../../Hook/useTitle';
 const SingleService = () => {
     const { title, img, price, rating, customers, description, delivery, number_of_img } = useLoaderData()
     const [reviews, setReviews] = useState([]);
     const {user} = useContext(AuthContext);
     const navigate = useNavigate()
+    useTitle(title);
     useEffect(() => {
         fetch('http://localhost:5000/reviews')
             .then(res => res.json())

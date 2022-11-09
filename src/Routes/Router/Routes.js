@@ -49,6 +49,14 @@ const router = createBrowserRouter([
                 path: '/givereview',
                 element: <PrivateRoute><ReviewForm></ReviewForm></PrivateRoute>
             },
+            {
+                path: '/myreviews',
+                element: <PrivateRoute></PrivateRoute>
+            },
+            {
+                path: '/addservice',
+                element: <PrivateRoute></PrivateRoute>
+            },
         ],
         errorElement: <Error></Error>
     },

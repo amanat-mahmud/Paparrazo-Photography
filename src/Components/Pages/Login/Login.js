@@ -2,7 +2,9 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from "../../../assets/img/paparazzo2.png"
 import {AuthContext} from "../../../context/AuthProvider"
+import useTitle from '../../../Hook/useTitle';
 const Login = () => {
+    useTitle('Login');
     const [showpass, setShowPass] = useState(false)
     const {loginGoogle,logIn} = useContext(AuthContext);
     const location = useLocation();

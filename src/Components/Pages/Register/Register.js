@@ -2,7 +2,9 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../../assets/img/paparazzo2.png"
 import {AuthContext} from "../../../context/AuthProvider"
+import useTitle from '../../../Hook/useTitle';
 const Register = () => {
+    useTitle('Register');
     const [showpass, setShowPass] = useState(false)
     const {loginGoogle,createUser,updateUser} = useContext(AuthContext);
     const handleRegister = (event)=>{

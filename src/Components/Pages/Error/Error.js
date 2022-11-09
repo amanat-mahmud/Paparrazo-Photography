@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import errorImg from '../../../assets/img/error/test1.jpg'
+import useTitle from '../../../Hook/useTitle';
 const Error = () => {
+    useTitle('Error');
     return (
         <div>
             <img src={errorImg} alt=""/>
