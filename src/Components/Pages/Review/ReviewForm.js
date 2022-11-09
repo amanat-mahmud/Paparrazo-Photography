@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../context/AuthProvider';
-
+import toast, { Toaster } from 'react-hot-toast';
 const ReviewForm = () => {
     // const [service,setService] = useState(null);
     // const handleServicename = (serviceName)=>{
@@ -26,8 +26,14 @@ const ReviewForm = () => {
               },
               body: JSON.stringify(review)
         })
-        .then()
-        .catch()
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        if(data.acknowledged){
+            toast.success('Review Added')
+        }
+    })
+    .catch()
     }
     return (
         <div className='text-center mb-5'>
@@ -47,6 +53,7 @@ const ReviewForm = () => {
                 <div className='text-center'>
                     <button type="submit" className="btn btn-outline">ADD</button>
                 </div>
+                <Toaster />
             </form>
         </div>
     );

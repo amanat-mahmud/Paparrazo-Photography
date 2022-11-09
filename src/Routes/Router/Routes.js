@@ -7,6 +7,7 @@ import ReviewForm from "../../Components/Pages/Review/ReviewForm";
 import Services from "../../Components/Pages/Services/Services";
 import SingleService from "../../Components/SingleService/SingleService";
 import Main from "../../layout/Main";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/givereview',
-                element: <ReviewForm></ReviewForm>
+                element: <PrivateRoute><ReviewForm></ReviewForm></PrivateRoute>
             },
         ],
         errorElement: <Error></Error>
