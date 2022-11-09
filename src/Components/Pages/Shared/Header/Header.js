@@ -10,7 +10,7 @@ const Header = () => {
     <li><NavLink to='/blog'>Blog</NavLink></li>
     <li><NavLink to='/reviews'>My reviews</NavLink></li>
     {
-      user?.displayName ? '' : <li><a href='/login'>Login</a></li>
+      user?.displayName ? '' : <li><NavLink to='/login'>Login</NavLink></li>
     }
   </>
   const handleLogout = () => {
@@ -56,7 +56,7 @@ const Header = () => {
             <li><Link><button className="btn btn-error" onClick={handleLogout}>Log out</button></Link></li>
           </ul>
         </div >:''}
-        {user?.displayName ? '' : <a className="btn bg-white text-black hover:text-white" href='/'>Resgister</a>}
+        {user?.displayName ? '' : <NavLink className="btn bg-white text-black hover:text-white" to='/register'>Resgister</NavLink>}
       </div>
     </div>
   );
