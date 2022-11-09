@@ -5,11 +5,11 @@ const Header = () => {
     const user = {}
     const menuItem = <>
     <li><a href='/'>Home</a></li>
-    <li><a href='/'>Services</a></li>
+    <li><a href='/services'>Services</a></li>
     <li><a href='/'>Blog</a></li>
     <li><a href='/'>My reviews</a></li>
     {
-            user?.PHOTOURL?'': <li><a href='/'>Login</a></li>
+            user?.PHOTOURL?'': <li><a href='/login'>Login</a></li>
     }
                         
     </>
@@ -50,8 +50,8 @@ const Header = () => {
         <li><a href='/'>Add Service</a></li>
         <li><Link><button className="btn btn-error">Log out</button></Link></li>
       </ul>
-    </div>
-                <a className="btn" href='/'>Resgister</a>
+    </div >
+                <a className="btn bg-white text-black hover:text-white" href='/'>Resgister</a>
             </div>
         </div>
     );
