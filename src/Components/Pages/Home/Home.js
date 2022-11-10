@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
@@ -14,9 +14,11 @@ import gal5 from "../../../assets/img/gallery/gal5.jpg"
 import gal6 from "../../../assets/img/gallery/gal6.jpg"
 import './Home.css'
 import useTitle from '../../../Hook/useTitle';
+import { AuthContext } from '../../../context/AuthProvider';
 const Home = () => {
     useTitle('Home');
     const services = useLoaderData();
+    const {user} = useContext(AuthContext);
     return (
         <div>
             {/* Hero section */}
@@ -27,7 +29,7 @@ const Home = () => {
                         <h1 className="mb-5 text-5xl font-bold">Your ride or die</h1>
                         <p className="mb-5">You're about to throw the most epic party for your friends and family? I will be your ride or die. My job is to catch every second, so you and your loved ones can just let go and live in the moment. You feel like we could vibe? Leave us a message and let's get this party started.</p>
                         {/* modal button */}
-                        <label htmlFor="hire-me-modal" className="btn btn-outline">Message me</label>
+                        <label htmlFor="hire-me-modal" className="btn btn-outline" disabled={user?"":"disabled"}>Message me</label>
                         {/* modal body */}
                         <input type="checkbox" id="hire-me-modal" className="modal-toggle" />
                         <div className="modal modal-bottom sm:modal-middle">
