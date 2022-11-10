@@ -7,7 +7,7 @@ import Service from '../Home/Service';
 const Services = () => {
     useTitle('Services');
     const { loading } = useContext(AuthContext);
-    console.log(loading);
+    // console.log(loading);
     const services = useLoaderData();
     return (
         <div>

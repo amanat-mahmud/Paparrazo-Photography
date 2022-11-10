@@ -10,7 +10,7 @@ const SingleService = () => {
     const [reviews, setReviews] = useState([]);
     const {user} = useContext(AuthContext);
     const navigate = useNavigate()
-    useTitle(title);
+    useTitle(`${title} Photography`);
     useEffect(() => {
         fetch('http://localhost:5000/reviews')
             .then(res => res.json())
@@ -81,6 +81,9 @@ const SingleService = () => {
                                 key={idx}
                                 review={review}></Review>
                         )
+                    }
+                    {
+                        reviews.length===0 && <h1 className='text-5xl text-center font-bold my-20 text-red-600'>Sorry, No reviews found</h1>
                     }
                     <div className='mt-5 text-center'>
                         <button className="btn gap-2  bg-white text-black hover:bg-slate-400" onClick={handleReview}>
