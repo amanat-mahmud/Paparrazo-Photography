@@ -20,7 +20,7 @@ const Service = ({ service }) => {
                     {/* title */}
                     <h2 className="card-title">{title} Photography</h2>
                     {/* description */}
-                    <p>{description.slice(0, 100) + '...'}</p>
+                    <p>{description.length>100?description.slice(0, 100) + '...':description}</p>
                     {/* Customers, rating */}
                     <div className='flex justify-between items-center text-lg'>
                         <div>

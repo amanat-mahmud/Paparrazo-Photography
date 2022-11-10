@@ -23,7 +23,7 @@ const UserReview = ({ review,handleDelete,handleUpdate }) => {
                             <p className="leading-relaxed mb-6">{description}</p>
                             <div className='flex justify-between'>
                                 <div className="inline-flex items-center">
-                                    <img alt="testimonial" src={image} className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
+                                    <img alt="User" src={image} className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
                                     <span className="flex-grow flex flex-col pl-4">
                                         <span className="title-font font-medium text-white">{name}</span>
                                         <span className="text-white text-sm">UI DEVELOPER</span>

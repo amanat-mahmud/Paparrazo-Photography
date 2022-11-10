@@ -17,7 +17,7 @@ const ReviewForm = () => {
         const title = form.title.value;
         const rating = form.rating.value;
         const description = form.description.value;
-        console.log(title,rating,description);
+        // console.log(title,rating,description);
         const date2 = new Date().toLocaleString()
         const newDate = date2.split(', ')
         const newDate2 = newDate.join(' ');
@@ -37,7 +37,7 @@ const ReviewForm = () => {
         })
     .then(res=>res.json())
     .then(data=>{
-        console.log(data);
+        // console.log(data);
         if(data.acknowledged){
             toast.success('Review Added')
         }
