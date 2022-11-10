@@ -6,7 +6,7 @@ import useTitle from '../../../Hook/useTitle';
 const Login = () => {
     useTitle('Login');
     const [showpass, setShowPass] = useState(false)
-    const {loginGoogle,logIn} = useContext(AuthContext);
+    const {loginGoogle,logIn,loading} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/';
@@ -72,6 +72,11 @@ const Login = () => {
     }
     return (
         <div>
+                {
+                    loading ? <div className='text-center'><button
+                        className="btn loading bg-white text-black w-1/2 my-20"
+                    >loading</button></div> : ''
+                }
             <div className="bg-indigo-50">
                 <div className="xl:px-20 md:px-10 sm:px-6 px-4 md:py-12 py-9 2xl:mx-auto 2xl:container md:flex items-center justify-center">
                     <div className=" md:hidden">

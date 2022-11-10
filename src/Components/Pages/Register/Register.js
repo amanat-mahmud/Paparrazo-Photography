@@ -6,7 +6,7 @@ import useTitle from '../../../Hook/useTitle';
 const Register = () => {
     useTitle('Register');
     const [showpass, setShowPass] = useState(false)
-    const {loginGoogle,createUser,updateUser} = useContext(AuthContext);
+    const {loginGoogle,createUser,updateUser,loading} = useContext(AuthContext);
     const handleRegister = (event)=>{
         event.preventDefault();
         const form = event.target;
@@ -30,6 +30,11 @@ const Register = () => {
     }
     return (
         <div>
+            {
+                loading ? <div className='text-center'><button
+                    className="btn loading bg-white text-black w-1/2 my-20"
+                >loading</button></div> : ''
+            }
             <div className="bg-indigo-50">
                 <div className="xl:px-20 md:px-10 sm:px-6 px-4 md:py-12 py-9 2xl:mx-auto 2xl:container md:flex items-center justify-center">
                     <div className=" md:hidden">

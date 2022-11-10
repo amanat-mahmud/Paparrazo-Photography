@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const Service = ({ service }) => {
     const { title, description, img, rating, customers, price } = service
     // console.log(typeof(img));
+
     return (
         <div className='col-span-1 mx-auto'>
             <div className="card card-compact w-96 bg-base-100 shadow-xl">
@@ -20,7 +21,7 @@ const Service = ({ service }) => {
                     {/* title */}
                     <h2 className="card-title">{title} Photography</h2>
                     {/* description */}
-                    <p>{description.length>100?description.slice(0, 100) + '...':description}</p>
+                    <p>{description.length > 100 ? description.slice(0, 100) + '...' : description}</p>
                     {/* Customers, rating */}
                     <div className='flex justify-between items-center text-lg'>
                         <div>
@@ -41,6 +42,7 @@ const Service = ({ service }) => {
                 </div>
             </div>
         </div>
+
     );
 };
 

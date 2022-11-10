@@ -5,9 +5,9 @@ import { AuthContext } from '../../../../context/AuthProvider';
 const Header = () => {
   const { user, logOut } = useContext(AuthContext)
   const menuItem = <>
-    <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/services'>Services</NavLink></li>
-    <li><NavLink to='/blog'>Blog</NavLink></li>
+    <li className='md:mx-2'><NavLink to='/'>Home</NavLink></li>
+    <li className='md:mx-2'><NavLink to='/services'>Services</NavLink></li>
+    <li className='md:mx-2'><NavLink to='/blog'>Blog</NavLink></li>
     {
       user?.displayName ? '' : <li><NavLink to='/login'>Login</NavLink></li>
     }
