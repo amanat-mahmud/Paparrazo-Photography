@@ -6,10 +6,15 @@
 - 👨‍💻 All of my projects are available at [https://github.com/amanat-mahmud?tab=repositories](https://github.com/amanat-mahmud?tab=repositories)
 
 <h3>
-<ul>Hola
-<li>Testing</li>
-<li>Testing</li>
-<li>Testing</li>
+<ul>Site Features
+<li>Appealing home page with gallery and recent shots section.</li>
+<li>Only 3 lates services are shown on the home page</li>
+<li>On servies page all services are shown.By clicking service view details we can see details of the service with reviews.</li>
+<li>In bottom of reviews there is a add review button.If user is not logged in then clicking the button will take user to log in page.
+Else it will take user to givereview route where user can write review</li>
+<li>Email/Password and google login are implemented with JWT verification.If user is not verified then user will not be able to see my reviews page. My reviews route is also a private route.</li>
+<li>User can edit and delete reviews from my reviews page.</li>
+<li>Add services is a private route where user can add services.</li>
 </ul>
 </h3>
 
