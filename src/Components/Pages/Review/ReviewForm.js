@@ -9,9 +9,9 @@ const ReviewForm = () => {
     //     setService(serviceName);
     //     console.log(service);
     // }
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     // console.log(user);
-    const handleAddReview= (event) =>{
+    const handleAddReview = (event) => {
         event.preventDefault();
         const form = event.target;
         const title = form.title.value;
@@ -25,24 +25,24 @@ const ReviewForm = () => {
         const date = newDate3[0];
         const time = newDate3[1];
         const zone = newDate3[2];
-        const review= {
-            title,description,rating,name:user.displayName,image:user.photoURL,email:user.email,date,time,zone
+        const review = {
+            title, description, rating, name: user.displayName, image: user.photoURL, email: user.email, date, time, zone
         }
-        fetch('http://localhost:5000/reviews',{
+        fetch('https://paparazzo-photography-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(review)
+            },
+            body: JSON.stringify(review)
         })
-    .then(res=>res.json())
-    .then(data=>{
-        // console.log(data);
-        if(data.acknowledged){
-            toast.success('Review Added')
-        }
-    })
-    .catch()
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                if (data.acknowledged) {
+                    toast.success('Review Added')
+                }
+            })
+            .catch()
     }
     return (
         <div className='text-center mb-5'>
@@ -56,8 +56,8 @@ const ReviewForm = () => {
                     <option onClick={()=>handleServicename()}>Journalism photography</option>
                     <option onClick={()=>handleServicename()}>Wildlife photography</option>
                 </select><br></br> */}
-                <input type="text" placeholder="Service Name" className="input input-bordered w-1/3 my-5" name='title'/><br></br>
-                <input type="text" placeholder="Rating" className="input input-bordered w-1/3 mb-5" name='rating'/><br></br>
+                <input type="text" placeholder="Service Name" className="input input-bordered w-1/3 my-5" name='title' /><br></br>
+                <input type="text" placeholder="Rating" className="input input-bordered w-1/3 mb-5" name='rating' /><br></br>
                 <textarea className="textarea textarea-bordered mb-5 w-1/3" placeholder="Review" rows="4" cols="50" name='description'></textarea>
                 <div className='text-center'>
                     <button type="submit" className="btn btn-outline">ADD</button>

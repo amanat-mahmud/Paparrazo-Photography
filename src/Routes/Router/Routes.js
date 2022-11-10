@@ -25,13 +25,13 @@ const router = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>,
-                loader: () => fetch('http://localhost:5000/services'),
+                loader: () => fetch('https://paparazzo-photography-server.vercel.app/services'),
             },
             {
                 path: '/services/:id',
                 element: <SingleService></SingleService>,
-                loader: 
-                ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+                loader:
+                    ({ params }) => fetch(`https://paparazzo-photography-server.vercel.app/services/${params.id}`),
             },
             {
                 path: '/login',
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
             {
                 path: '/updatereview/:id',
                 element: <PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/review/${params.id}`)
+                loader: ({ params }) => fetch(`https://paparazzo-photography-server.vercel.app/review/${params.id}`)
             },
             {
                 path: '/addservice',

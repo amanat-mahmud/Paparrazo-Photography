@@ -6,7 +6,7 @@
 - 👨‍💻 All of my projects are available at [https://github.com/amanat-mahmud?tab=repositories](https://github.com/amanat-mahmud?tab=repositories)
 
 
-<ul>Site Features
+<ul><h3>Site Features</h3>
 <li>Appealing home page with gallery and recent shots section.</li>
 <li>Only 3 latest services are shown on the home page</li>
 <li>On servies page all services are shown. By clicking view details we can see details of the service with reviews.</li>

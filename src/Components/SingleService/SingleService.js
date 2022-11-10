@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import {  useLoaderData, useNavigate } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { FaStar, FaUserAlt, FaClock, FaImage } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import Review from './Review';
@@ -8,11 +8,11 @@ import useTitle from '../../Hook/useTitle';
 const SingleService = () => {
     const { title, img, price, rating, customers, description, delivery, number_of_img } = useLoaderData()
     const [reviews, setReviews] = useState([]);
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const navigate = useNavigate()
     useTitle(`${title} Photography`);
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://paparazzo-photography-server.vercel.app/reviews')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -21,19 +21,19 @@ const SingleService = () => {
             })
     }, [title])
     // console.log(reviews);
-    const handleReview = () =>{
-        if(user===null){
-            
+    const handleReview = () => {
+        if (user === null) {
+
             navigate('/login')
         }
-        else{
-             navigate('/givereview')
+        else {
+            navigate('/givereview')
         }
     }
     return (
         <div>
             {/* toast('Here is your toast.') */}
-            
+
             {/* Single service */}
             <div className='mb-10'>
                 <h1 className='text-center text-5xl font-bold'>{title} photography</h1>
@@ -83,14 +83,14 @@ const SingleService = () => {
                         )
                     }
                     {
-                        reviews.length===0 && <h1 className='text-5xl text-center font-bold my-20 text-red-600'>Sorry, No reviews found</h1>
+                        reviews.length === 0 && <h1 className='text-5xl text-center font-bold my-20 text-red-600'>Sorry, No reviews found</h1>
                     }
                     <div className='mt-5 text-center'>
                         <button className="btn gap-2  bg-white text-black hover:bg-slate-400" onClick={handleReview}>
-                        <FaStar className='mr-2 h-6 w-6'></FaStar>
+                            <FaStar className='mr-2 h-6 w-6'></FaStar>
                             Add Review
                         </button>
-                        {user?.email ?  "": <p className='text-center font-bold text-red-600'>Please login to add review</p>}
+                        {user?.email ? "" : <p className='text-center font-bold text-red-600'>Please login to add review</p>}
                     </div>
                 </div>
             </div>
