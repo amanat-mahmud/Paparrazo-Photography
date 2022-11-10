@@ -3,6 +3,7 @@ import Error from "../../Components/Pages/Error/Error";
 import Home from "../../Components/Pages/Home/Home";
 import Login from "../../Components/Pages/Login/Login";
 import MyReviews from "../../Components/Pages/MyReviews/MyReviews";
+import UpdateReview from "../../Components/Pages/MyReviews/UpdateReview";
 import Register from "../../Components/Pages/Register/Register";
 import ReviewForm from "../../Components/Pages/Review/ReviewForm";
 import Services from "../../Components/Pages/Services/Services";
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
             {
                 path: '/myreviews',
                 element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+            },
+            {
+                path: '/updatereview/:id',
+                element: <PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
+                loader:({params})=>fetch(`http://localhost:5000/review/${params.id}`)
             },
             {
                 path: '/addservice',

@@ -1,7 +1,8 @@
 import React from 'react';
 import { FaClock, FaStar,FaTrashAlt,FaEdit } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
-const UserReview = ({ review,handleDelete }) => {
+const UserReview = ({ review,handleDelete,handleUpdate }) => {
     const {_id, title, description, name, image, rating, date, time, zone } = review
     
     return (
@@ -35,9 +36,11 @@ const UserReview = ({ review,handleDelete }) => {
                             </div>
                             {/* edit button */}
                             <div className='flex justify-end mt-5'>
+                            <Link onClick={()=>handleUpdate(_id)} 
+                            to={`/updatereview/${_id}`}>
                             <button className="btn btn-circle btn-outline mr-4">
-                                <FaEdit className='text-xl ml-1'></FaEdit>
-                            </button>
+                                <FaEdit className='text-xl ml-1'></FaEdit></button>
+                            </Link>
                             {/* delete button */}
                             <button className="btn btn-circle btn-outline hover:bg-red-600 hover:border-white hover:text-white"
                             onClick={()=>handleDelete(_id)}>
