@@ -17,15 +17,56 @@ const Login = () => {
         const password = form.password.value;
         // console.log(email,password);
         logIn(email,password)
-        .then(res=>{console.log(res.user);
-            navigate(from, { replace: true });
+        .then(res=>{
+            // console.log(res.user);
+            const user = res.user;
+            // created this bcz we only need email of the user
+            const currentUser = {
+                email: user.email
+            }
+            // get jwt token as user has successfully logged in
+            fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                .then(res => res.json())
+                .then(data => {
+                        console.log(data);
+                        // local storage is the easiest but not the best place to store jwt token
+                        localStorage.setItem('paparrazo-token', data.token)
+                        navigate(from, { replace: true });
+                    })
         })
         .catch(error=>console.error(error.message))
     }
     const handleGoogleLogin = ()=>{
         loginGoogle()
-        .then(res=>{console.log(res.user);
-            navigate(from, { replace: true });
+        .then(res=>{
+            console.log(res.user);
+            // console.log(res.user);
+            const user = res.user;
+            // created this bcz we only need email of the user
+            const currentUser = {
+                email: user.email
+            }
+            // get jwt token as user has successfully logged in
+            fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                .then(res => res.json())
+                .then(data => {
+                        console.log(data);
+                        // local storage is the easiest but not the best place to store jwt token
+                        localStorage.setItem('paparrazo-token', data.token)
+                        navigate(from, { replace: true });
+                    })
         })
         .catch(error=>console.error(error.message))
     }
