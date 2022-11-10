@@ -53,11 +53,6 @@ const MyReviews = () => {
             }
         })
     }
-    const handleUpdate = (id) => {
-        console.log(id);
-
-
-    }
     return (
         <div>
             <h1 className='text-5xl text-center font-bold'>My Reviews</h1>
@@ -70,7 +65,6 @@ const MyReviews = () => {
                     key={review._id}
                     review={review}
                     handleDelete={handleDelete}
-                    handleUpdate={handleUpdate}
                 ></UserReview>)
             }
         </div>

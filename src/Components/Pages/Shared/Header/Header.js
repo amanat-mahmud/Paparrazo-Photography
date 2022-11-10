@@ -52,7 +52,7 @@ const Header = () => {
               </a>
             </li>
             <li><Link to='/myreviews'>My reviews</Link></li>
-            <li><Link to='/'>Add Service</Link></li>
+            <li><Link to='/addservice'>Add Service</Link></li>
             <li><Link><button className="btn btn-error" onClick={handleLogout}>Log out</button></Link></li>
           </ul>
         </div >:''}
