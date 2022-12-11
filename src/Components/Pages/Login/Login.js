@@ -36,7 +36,7 @@ const Login = () => {
                     .then(data => {
                         // console.log(data);
                         // local storage is the easiest but not the best place to store jwt token
-                        localStorage.setItem('paparrazo-token', data.token)
+                        localStorage.setItem('paparazzo-token', data.token)
                         navigate(from, { replace: true });
                     })
             })
@@ -64,7 +64,7 @@ const Login = () => {
                     .then(data => {
                         console.log(data);
                         // local storage is the easiest but not the best place to store jwt token
-                        localStorage.setItem('paparrazo-token', data.token)
+                        localStorage.setItem('paparazzo-token', data.token)
                         navigate(from, { replace: true });
                     })
             })

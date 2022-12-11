@@ -13,7 +13,7 @@ const MyReviews = () => {
     useEffect(() => {
         fetch(`https://paparazzo-photography-server.vercel.app/myreviews?email=${user?.email}`, {
             headers: {
-                authorization: `Bearer ${localStorage.getItem('paparrazo-token')}`
+                authorization: `Bearer ${localStorage.getItem('paparazzo-token')}`
             }
         })
             .then(res => res.json())
