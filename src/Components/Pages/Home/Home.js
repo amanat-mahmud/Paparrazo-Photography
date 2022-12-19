@@ -3,9 +3,9 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import Service from './Service';
-import recent1 from "../../../assets/img/recent/rec1.jpg"
-import recent2 from "../../../assets/img/recent/rectest2.jpg"
-import recent3 from "../../../assets/img/recent/rec3.jpg"
+import recent1 from "../../../assets/img/recent/test1.png"
+import recent2 from "../../../assets/img/recent/test2.jpg"
+import recent3 from "../../../assets/img/recent/test3.jpg"
 import gal1 from "../../../assets/img/gallery/gal1.jpg"
 import gal2 from "../../../assets/img/gallery/gal2.jpg"
 import gal3 from "../../../assets/img/gallery/gal3.jpg"
