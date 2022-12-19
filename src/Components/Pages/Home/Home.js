@@ -7,12 +7,18 @@ import recent1 from "../../../assets/img/recent/test1.png"
 import recent2 from "../../../assets/img/recent/test2.jpg"
 import recent3 from "../../../assets/img/recent/test3.jpg"
 import gal1 from "../../../assets/img/gallery/gal1.jpg"
-import galMin1 from "../../../assets/img/gallery/galmin1.jpg"
 import gal2 from "../../../assets/img/gallery/gal2.jpg"
 import gal3 from "../../../assets/img/gallery/gal3.jpg"
 import gal4 from "../../../assets/img/gallery/gal4.jpg"
 import gal5 from "../../../assets/img/gallery/gal5.jpg"
 import gal6 from "../../../assets/img/gallery/gal6.jpg"
+import galMin1 from "../../../assets/img/gallery/galmin1.jpg"
+import galMin2 from "../../../assets/img/gallery/galMin2.jpg"
+import galMin3 from "../../../assets/img/gallery/galMin3.jpg"
+import galMin4 from "../../../assets/img/gallery/galMin4.jpg"
+import galMin5 from "../../../assets/img/gallery/galMin5.jpg"
+import galMin6 from "../../../assets/img/gallery/galMin6.jpg"
+
 import './Home.css'
 import useTitle from '../../../Hook/useTitle';
 import { AuthContext } from '../../../context/AuthProvider';
@@ -94,33 +100,33 @@ const Home = () => {
                     <PhotoProvider>
                         <div className='col-span-1'>
                             <PhotoView src={gal1}>
-                                <img src={gal1} alt="" />
+                                <img src={galMin1} alt="" />
                             </PhotoView>
                         </div>
                         <div className='col-span-1'>
                             <PhotoView src={gal2}>
-                                <img src={gal2} alt="" style={{height:'131px'}}/>
+                                <img src={galMin2} alt="" style={{height:'131px'}}/>
                             </PhotoView>
                         </div>
                         <div className='col-span-1'>
                             <PhotoView src={gal3}>
-                            <img src={gal3} alt="" style={{height:'131px'}}/>
+                            <img src={galMin3} alt="" style={{height:'131px'}}/>
                             </PhotoView>
                             
                         </div>
                         <div className='col-span-1'>
                             <PhotoView src={gal4}>
-                            <img src={gal4} alt="" style={{height:'131px'}}/>
+                            <img src={galMin4} alt="" style={{height:'131px'}}/>
                             </PhotoView>
                         </div>
                         <div className='col-span-1'>
                             <PhotoView src={gal5}>
-                            <img src={gal5} alt="" style={{height:'131px'}}/>
+                            <img src={galMin5} alt="" style={{height:'131px'}}/>
                             </PhotoView>
                         </div>
                         <div className='col-span-1'>
                             <PhotoView src={gal6}>
-                            <img src={gal6} alt="" style={{height:'131px'}}/>
+                            <img src={galMin6} alt="" style={{height:'131px'}}/>
                             </PhotoView>
                             
                         </div>
