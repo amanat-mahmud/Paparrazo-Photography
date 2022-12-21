@@ -3,6 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import Service from './Service';
+import heroImg from  "../../../assets/img/heroImg.png"
 import recent1 from "../../../assets/img/recent/test1.png"
 import recent2 from "../../../assets/img/recent/test2.jpg"
 import recent3 from "../../../assets/img/recent/test3.jpg"
@@ -29,7 +30,7 @@ const Home = () => {
     return (
         <div>
             {/* Hero section */}
-            <div className="hero min-h-screen" style={{ backgroundImage: `url("https://images.unsplash.com/photo-1563991655280-cb95c90ca2fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")` }}>
+            <div className="hero min-h-screen" style={{ backgroundImage: `url("${heroImg}")` }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md text-white">

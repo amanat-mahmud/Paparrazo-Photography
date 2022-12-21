@@ -1,8 +1,10 @@
 import React from 'react';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import useTitle from '../../../Hook/useTitle';
 const AddService = () => {
-    useTitle('Add Service')
+    useTitle('Add Service');
+    const navigate = useNavigate();
     const handleAddService = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -27,9 +29,9 @@ const AddService = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
                 if (data.acknowledged > 0) {
                     toast.success('Service Added')
+                    navigate("../services")
                 }
             })
             .catch()
@@ -55,7 +57,7 @@ const AddService = () => {
                     <div className='text-center'>
                         <button type="submit" className="btn btn-outline">Add service</button>
                     </div>
-                    <Toaster />
+                    
                 </form>
             </div>
         </div>
