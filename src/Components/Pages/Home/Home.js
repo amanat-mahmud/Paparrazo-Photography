@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate, useNavigation } from 'react-router-dom';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import Service from './Service';
@@ -23,10 +23,16 @@ import galMin6 from "../../../assets/img/gallery/galMin6.jpg"
 import './Home.css'
 import useTitle from '../../../Hook/useTitle';
 import { AuthContext } from '../../../context/AuthProvider';
+import Loader from '../../Loader/Loader';
 const Home = () => {
+    const navigation = useNavigation();
     useTitle('Home');
     const services = useLoaderData();
     const {user} = useContext(AuthContext);
+    if(navigation.state==="loading"){
+        return <Loader></Loader>
+    }
+
     return (
         <div>
             {/* Hero section */}
@@ -45,7 +51,7 @@ const Home = () => {
                                 <h3 className="font-bold text-lg">Congratulations!!!</h3>
                                 <p className="py-4">Please check your email. Thank you.</p>
                                 <div className="modal-action">
-                                    <label htmlFor="hire-me-modal" className="btn">Okay</label>
+                                    <label htmlFor="hire-me-modal" className="btn btn-outline">Okay</label>
                                 </div>
                             </div>
                         </div>

@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
 import useTitle from '../../../Hook/useTitle';
+import Loader from '../../Loader/Loader';
 import Service from '../Home/Service';
 
 const Services = () => {
@@ -9,6 +10,10 @@ const Services = () => {
     const { loading } = useContext(AuthContext);
     // console.log(loading);
     const services = useLoaderData();
+    const navigation = useNavigation();
+    if(navigation.state==="loading"){
+        return <Loader></Loader>
+    }
     return (
         <div>
             {
